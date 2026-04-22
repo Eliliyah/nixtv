@@ -114,17 +114,13 @@
     zellij
     yazi
     libreoffice-fresh
-    gimp
     appimage-run
     vscodium
     mullvad-vpn
-    plex
     jellyfin
     immich
-    brave
     element-desktop
     qbittorrent
-    plexamp
   ];
 
   nixpkgs.config = {
