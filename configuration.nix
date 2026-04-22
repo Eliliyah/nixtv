@@ -85,7 +85,10 @@
 
   services = {
     flatpak.enable = true;
-    displayManager.gdm.enable = true;
+    displayManager.gdm = {
+      autoSuspend = false;
+      enable = true;
+    };
     desktopManager.gnome.enable = true;
     mullvad-vpn.enable = true;
     openssh.enable = true;
@@ -127,6 +130,20 @@
   nixpkgs.config = {
     allowUnsupportedSystem = true;
     allowUnfree = true;
+  };
+  
+  # sleep fix
+  systemd.sleep.extraConfig = ''
+    AllowSuspend=no
+    AllowHibernation=no
+    AllowHybridSleep=no
+    AllowSuspendThenHibernate=no
+  '';
+  systemd.targets = {
+    sleep.enable = false;
+    suspend.enable = false;
+    hibernate.enable = false;
+    hybrid-sleep.enable = false;
   };
 
   # List packages installed in system profile.
