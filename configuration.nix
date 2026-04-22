@@ -90,6 +90,7 @@
     mullvad-vpn.enable = true;
     openssh.enable = true;
     xserver.enable = true;
+    xserver.desktopManager.kodi.enable = true;
     pipewire = {
       enable = true;
       pulse.enable = true;
