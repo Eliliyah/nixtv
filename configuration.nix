@@ -98,6 +98,9 @@
       enable = true;
       pulse.enable = true;
     };
+    logind.settings.Login = {
+      HandleLidSwitch = "ignore";
+    };
   };
 
   xdg.portal.enable = true;
