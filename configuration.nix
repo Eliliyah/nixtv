@@ -82,15 +82,17 @@ extraGroups = [ "networkmanager" "wheel" ];
 programs = {
   firefox.enable = true;
   fish.enable = true;
+  vim.enable = true;
+  adb.enable = true;
+  dconf.enable = true;
+  starship.enable = true;
+  noisetorch.enable = true;
 };
 
-programs.vim.enable = true;
 
 services.flatpak.enable = true;
 
 xdg.portal.enable = true;
-
-programs.adb.enable = true;
 
 zramSwap.enable = true;
 
@@ -100,13 +102,7 @@ services.displayManager.gdm.enable = true;
 
 services.desktopManager.gnome.enable = true;
 
-programs.dconf.enable = true;
-
 services.mullvad-vpn.enable = true;
-
-programs.starship.enable = true;
-
-programs.noisetorch.enable = true;
 
 environment.systemPackages = [
     pkgs.feishin
