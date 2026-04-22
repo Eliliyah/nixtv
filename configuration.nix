@@ -46,11 +46,7 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Enable the X11 windowing system.
- services.xserver.enable = true;
-
-
-  # Configure keymap in X11
+    # Configure keymap in X11
   services.xserver = {
     layout = "us";
     xkbVariant = "";
@@ -62,10 +58,7 @@
   # Enable sound.
   # services.pulseaudio.enable = true;
   # OR
-  services.pipewire = {
-  enable = true;
-  pulse.enable = true;
-  };
+  
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
@@ -89,20 +82,24 @@ programs = {
   noisetorch.enable = true;
 };
 
-
-services.flatpak.enable = true;
+services = {
+  flatpak.enable = true;
+  displayManager.gdm.enable = true;
+  desktopManager.gnome.enable = true;
+  mullvad-vpn.enable = true;
+  openssh.enable = true;
+  xserver.enable = true;
+  pipewire = {
+    enable = true;
+    pulse.enable = true;
+    };
+};
 
 xdg.portal.enable = true;
 
 zramSwap.enable = true;
 
 hardware.bluetooth.enable = true;
-
-services.displayManager.gdm.enable = true;
-
-services.desktopManager.gnome.enable = true;
-
-services.mullvad-vpn.enable = true;
 
 environment.systemPackages = [
     pkgs.feishin
@@ -133,6 +130,7 @@ environment.systemPackages = [
     allowUnsupportedSystem = true;
     allowUnfree = true;
   };
+
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   # environment.systemPackages = with pkgs; [
@@ -150,8 +148,6 @@ environment.systemPackages = [
 
   # List services that you want to enable:
 
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
