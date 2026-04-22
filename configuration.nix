@@ -102,29 +102,29 @@
 
   hardware.bluetooth.enable = true;
 
-  environment.systemPackages = [
-    pkgs.feishin
-    pkgs.kdePackages.konsole
-    pkgs.git
-    pkgs.vscodium
-    pkgs.file-roller
-    pkgs.fastfetch
-    pkgs.vlc
-    pkgs.strawberry
-    pkgs.zellij
-    pkgs.yazi
-    pkgs.libreoffice-fresh
-    pkgs.gimp
-    pkgs.appimage-run
-    pkgs.vscodium
-    pkgs.mullvad-vpn
-    pkgs.plex
-    pkgs.jellyfin
-    pkgs.immich
-    pkgs.brave
-    pkgs.element-desktop
-    pkgs.qbittorrent
-    pkgs.plexamp
+  environment.systemPackages = with pkgs; [
+    feishin
+    kdePackages.konsole
+    git
+    vscodium
+    file-roller
+    fastfetch
+    vlc
+    strawberry
+    zellij
+    yazi
+    libreoffice-fresh
+    gimp
+    appimage-run
+    vscodium
+    mullvad-vpn
+    plex
+    jellyfin
+    immich
+    brave
+    element-desktop
+    qbittorrent
+    plexamp
   ];
 
   nixpkgs.config = {
