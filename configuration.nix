@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
@@ -20,7 +21,7 @@
   networking.networkmanager.enable = true;
 
   # Set your time zone.
- time.timeZone = "America/New_York";
+  time.timeZone = "America/New_York";
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
@@ -46,7 +47,7 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-    # Configure keymap in X11
+  # Configure keymap in X11
   services.xserver = {
     layout = "us";
     xkbVariant = "";
@@ -58,50 +59,50 @@
   # Enable sound.
   # services.pulseaudio.enable = true;
   # OR
-  
+
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
- users.users.ellie = {
- isNormalUser = true;
-extraGroups = [ "networkmanager" "wheel" ];
- packages = with pkgs; [
+  users.users.ellie = {
+    isNormalUser = true;
+    extraGroups = [ "networkmanager" "wheel" ];
+    packages = with pkgs; [
       tree
     ];
   };
 
-programs = {
-  firefox.enable = true;
-  fish.enable = true;
-  vim.enable = true;
-  adb.enable = true;
-  dconf.enable = true;
-  starship.enable = true;
-  noisetorch.enable = true;
-};
+  programs = {
+    firefox.enable = true;
+    fish.enable = true;
+    vim.enable = true;
+    adb.enable = true;
+    dconf.enable = true;
+    starship.enable = true;
+    noisetorch.enable = true;
+  };
 
-services = {
-  flatpak.enable = true;
-  displayManager.gdm.enable = true;
-  desktopManager.gnome.enable = true;
-  mullvad-vpn.enable = true;
-  openssh.enable = true;
-  xserver.enable = true;
-  pipewire = {
-    enable = true;
-    pulse.enable = true;
+  services = {
+    flatpak.enable = true;
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
+    mullvad-vpn.enable = true;
+    openssh.enable = true;
+    xserver.enable = true;
+    pipewire = {
+      enable = true;
+      pulse.enable = true;
     };
-};
+  };
 
-xdg.portal.enable = true;
+  xdg.portal.enable = true;
 
-zramSwap.enable = true;
+  zramSwap.enable = true;
 
-hardware.bluetooth.enable = true;
+  hardware.bluetooth.enable = true;
 
-environment.systemPackages = [
+  environment.systemPackages = [
     pkgs.feishin
     pkgs.kdePackages.konsole
     pkgs.git
@@ -126,7 +127,7 @@ environment.systemPackages = [
     pkgs.plexamp
   ];
 
-  nixpkgs.config ={
+  nixpkgs.config = {
     allowUnsupportedSystem = true;
     allowUnfree = true;
   };
@@ -153,7 +154,7 @@ environment.systemPackages = [
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-networking.firewall.enable = true;
+  networking.firewall.enable = true;
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
