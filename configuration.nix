@@ -79,9 +79,10 @@ extraGroups = [ "networkmanager" "wheel" ];
     ];
   };
 
-programs.firefox.enable = true;
-
-programs.fish.enable = true;
+programs = {
+  firefox.enable = true;
+  fish.enable = true;
+};
 
 programs.vim.enable = true;
 
